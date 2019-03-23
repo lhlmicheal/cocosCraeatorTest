@@ -27,6 +27,11 @@ cc.Class({
 
         // this.node.on(game.EVTS.STAR_COLLECT, this.onStarCollect, this);
         customEvents.listen(game.EVTS.STAR_COLLECT, this.onStarCollect, this);
+        cc.director.getPhysicsManager().enabled = true;
+        cc.director.getPhysicsManager().debugDrawFlags = cc.PhysicsManager.DrawBits.e_shapeBit;
+        // cc.PhysicsManager.DrawBits.e_jointBit |
+        // cc.PhysicsManager.DrawBits.e_shapeBit
+        //     ;
     },
 
     onDestroy: function () {
@@ -38,10 +43,12 @@ cc.Class({
     },
 
     start: function () {
+        console.log("__gameConstrol_enableCollision_physics");
         var manager = cc.director.getCollisionManager();
         manager.enabled = true;
-        // manager.enabledDebugDraw = true;
-        // manager.enabledDrawBoundingBox = true;
+        manager.enabledDebugDraw = true;
+        manager.enabledDrawBoundingBox = true;
+
     },
 
     update: function (dt) {
@@ -77,7 +84,7 @@ cc.Class({
     },
 
     onStarCollect: function (score) {
-        console.log("xxx_gameControl_startCollect_score=" + score);
+        // console.log("xxx_gameControl_startCollect_score=" + score);
         modelControl.setGameScore(modelControl.getGameScore() + score);
         // cc.find("score", this.node).setString(modelControl.getGameScore() - '');
         this.score.string = (modelControl.getGameScore());

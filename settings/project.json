@@ -13,6 +13,8 @@
     [
       false,
       false,
+      true,
+      null,
       true
     ],
     [
@@ -22,6 +24,13 @@
     ],
     [
       false,
+      false,
+      false,
+      false
+    ],
+    [
+      false,
+      true,
       false,
       false,
       false
@@ -35,8 +44,9 @@
   "group-list": [
     "default",
     "role",
-    "coll_star",
-    "ground"
+    "pick_up",
+    "ground",
+    "animy"
   ],
   "simulator-orientation": false,
   "simulator-resolution": {

@@ -72,7 +72,7 @@
             <key>coin_turn_03.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{849,172},{49,85}}</string>
+                <string>{{866,87},{49,85}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -98,7 +98,7 @@
             <key>coin_turn_05.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{880,257},{17,85}}</string>
+                <string>{{904,2},{17,85}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -111,7 +111,7 @@
             <key>coin_turn_06.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{855,2},{33,85}}</string>
+                <string>{{866,172},{33,85}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -124,7 +124,7 @@
             <key>coin_turn_07.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{849,87},{49,85}}</string>
+                <string>{{855,2},{49,85}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -160,6 +160,32 @@
                 <key>sourceSize</key>
                 <string>{256,256}</string>
             </dict>
+            <key>hanging_floor.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{514,315},{61,30}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{61,30}}</string>
+                <key>sourceSize</key>
+                <string>{61,30}</string>
+            </dict>
+            <key>pick_pile.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{849,87},{17,131}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{17,131}}</string>
+                <key>sourceSize</key>
+                <string>{17,131}</string>
+            </dict>
             <key>star.png</key>
             <dict>
                 <key>frame</key>
@@ -173,6 +199,19 @@
                 <key>sourceSize</key>
                 <string>{60,71}</string>
             </dict>
+            <key>stone_1.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{880,257},{32,95}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{32,95}}</string>
+                <key>sourceSize</key>
+                <string>{32,95}</string>
+            </dict>
         </dict>
         <key>metadata</key>
         <dict>
@@ -181,9 +220,9 @@
             <key>realTextureFileName</key>
             <string>common.png</string>
             <key>size</key>
-            <string>{900,366}</string>
+            <string>{923,366}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:c0316b6d4b118a739ac9cb05f8755f7b:1/1$</string>
+            <string>$TexturePacker:SmartUpdate:ed1c93a1c4f03ee4e7abafdd4accf313:1/1$</string>
             <key>textureFileName</key>
             <string>common.png</string>
         </dict>

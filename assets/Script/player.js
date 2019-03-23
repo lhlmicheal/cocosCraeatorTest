@@ -92,26 +92,57 @@ cc.Class({
 
     start: function () {
         console.log('player__start');
+
     },
 
     onLoad: function () {
         this.anim = this.node.getComponent(cc.Animation);
         this.animState = this.anim.play('role_walk');
+        // cc.director.getPhysicsManager().enabled = true;
+        // cc.director.getPhysicsManager().gravity = cc.v2(0, -320);
+        // var gravity = cc.director.getPhysicsManager().gravity;
+        // console.log("__player_gravity(" + gravity.x + ',' + gravity.y + ')');
+        // this.rigidbody = this.node.getComponent(cc.RigidBody);
+
     },
 
     update: function (dt) {
         this.moveAction(this.moveSpeed * dt);
     },
+    // 普通碰撞回调
+    // onCollisionEnter: function (other, self) {
+    //     console.log('onCollisionEnter...play');
+    // },
 
-    onCollisionEnter: function (other, self) {
-        console.log('onCollisionEnter...play');
-    },
+    // onCollisionStay: function (other, self) {
+    //     // console.log('onCollisionStay...play');
+    // },
 
-    onCollisionStay: function (other, self) {
-        // console.log('onCollisionStay...play');
-    },
+    // onCollisionExit: function (other, self) {
+    //     // console.log('onCollisionExit...play');
+    // },
 
-    onCollisionExit: function (other, self) {
-        // console.log('onCollisionExit...play');
-    }
+    //刚体碰撞组件回调
+    //只在两个碰撞体开始接触时被调用一次
+    // onBeginContact: function (contact, selfCollider, otherCollider) {
+    //     console.log("__role_contack_begin");
+    //     // if (otherCollider && otherCollider.node.name == 'role') {
+    //     //     console.log('_role_get start');
+    //     //     cc.audioEngine.play(this.score_audio, false, 2);
+    //     //     customEvents.trigger(game.EVTS.STAR_COLLECT, [this.score_value]);
+    //     //     this.node.removeFromParent();
+    //     // }
+    // },
+    // //每次将要处理碰撞体接触逻辑时被调用
+    // onPreSolve: function (contact, selfCollider, otherCollider) {
+
+    // },
+    // //每次处理完碰撞体接触逻辑时被调用
+    // onPostContact: function (contact, selfCollider, otherCollider) {
+
+    // },
+    // //只在两个碰撞体结束接触时被调用一次
+    // onEndContact: function (contact, selfCollider, otherCollider) {
+
+    // }
 });
