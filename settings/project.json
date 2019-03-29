@@ -14,7 +14,11 @@
       false,
       false,
       true,
-      null,
+      true,
+      true,
+      true,
+      true,
+      true,
       true
     ],
     [
@@ -24,8 +28,40 @@
     ],
     [
       false,
+      true,
       false,
       false,
+      true,
+      true,
+      true
+    ],
+    [
+      false,
+      true,
+      false,
+      true,
+      false,
+      true,
+      null,
+      true,
+      true
+    ],
+    [
+      false,
+      true,
+      false,
+      true,
+      true,
+      true,
+      true
+    ],
+    [
+      false,
+      true,
+      false,
+      true,
+      false,
+      true,
       false
     ],
     [
@@ -33,6 +69,21 @@
       true,
       false,
       false,
+      true,
+      false,
+      false,
+      false,
+      true
+    ],
+    [
+      false,
+      true,
+      false,
+      false,
+      true,
+      false,
+      false,
+      true,
       false
     ]
   ],
@@ -46,7 +97,11 @@
     "role",
     "pick_up",
     "ground",
-    "animy"
+    "animy",
+    "ground_static",
+    "ground_dynamic",
+    "hanging_static",
+    "hanging_dynamic"
   ],
   "simulator-orientation": false,
   "simulator-resolution": {

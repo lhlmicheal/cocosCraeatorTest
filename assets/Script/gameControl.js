@@ -25,19 +25,15 @@ cc.Class({
         cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this.oneKeyDown, this);
         cc.systemEvent.on(cc.SystemEvent.EventType.KEY_UP, this.oneKeyUp, this);
 
-        // this.node.on(game.EVTS.STAR_COLLECT, this.onStarCollect, this);
         customEvents.listen(game.EVTS.STAR_COLLECT, this.onStarCollect, this);
         cc.director.getPhysicsManager().enabled = true;
         cc.director.getPhysicsManager().debugDrawFlags = cc.PhysicsManager.DrawBits.e_shapeBit;
-        // cc.PhysicsManager.DrawBits.e_jointBit |
-        // cc.PhysicsManager.DrawBits.e_shapeBit
-        //     ;
     },
 
     onDestroy: function () {
         cc.systemEvent.off(cc.SystemEvent.EventType.KEY_DOWN, this.oneKeyDown, this);
         cc.systemEvent.off(cc.SystemEvent.EventType.KEY_UP, this.oneKeyUp, this);
-        // this.node.off(game.EVTS.STAR_COLLECT, this.onStarCollect, this);
+
         console.log("__gameControl_onDestroy");
         customEvents.ignore(game.EVTS.STAR_COLLECT, this.onStarCollect, this);
     },
@@ -77,6 +73,10 @@ cc.Class({
                 break;
             case cc.macro.KEY.d:
                 this.player.getComponent('player').stopMoveAction(game.PLAYER_STATE.HORIZON_FORWARD_MOVING);
+                break;
+            case cc.macro.KEY.up:
+                this.player.getComponent('player').stopMoveAction(game.PLAYER_STATE.HANGING);
+                console.log("_control_key_up:key=up");
                 break;
             default:
                 break;
