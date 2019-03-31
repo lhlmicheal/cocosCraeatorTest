@@ -27,7 +27,7 @@ cc.Class({
 
         customEvents.listen(game.EVTS.STAR_COLLECT, this.onStarCollect, this);
         cc.director.getPhysicsManager().enabled = true;
-        cc.director.getPhysicsManager().debugDrawFlags = cc.PhysicsManager.DrawBits.e_shapeBit;
+        // cc.director.getPhysicsManager().debugDrawFlags = cc.PhysicsManager.DrawBits.e_shapeBit;
     },
 
     onDestroy: function () {

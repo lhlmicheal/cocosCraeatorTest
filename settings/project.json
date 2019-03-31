@@ -90,8 +90,8 @@
   "design-resolution-height": 640,
   "design-resolution-width": 960,
   "excluded-modules": [],
-  "fit-height": true,
-  "fit-width": false,
+  "fit-height": false,
+  "fit-width": true,
   "group-list": [
     "default",
     "role",

@@ -4,7 +4,7 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
-        curDirection: 1, //1面向左, -1面向右
+        curDirection: 1, //1正向方向, -1反方向
         upPressed: false, //是否按下跳跃键
 
         jumpHeight: 0,
@@ -71,12 +71,12 @@ cc.Class({
             case game.PLAYER_STATE.HORIZON_FORWARD_MOVING:
                 this.accel_backword = false;
                 this.accel_forword = true;
-                direction = -1;
+                direction = 1;
                 break;
             case game.PLAYER_STATE.HORIZON_BACKWARD_MOVING:
                 this.accel_backword = true;
                 this.accel_forword = false;
-                direction = 1;
+                direction = -1;
                 break;
             case game.PLAYER_STATE.STAND_STILL:
                 this.accel_backword = false;
