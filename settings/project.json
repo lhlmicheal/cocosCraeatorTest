@@ -33,6 +33,9 @@
       false,
       true,
       true,
+      true,
+      null,
+      null,
       true
     ],
     [
@@ -44,14 +47,6 @@
       true,
       null,
       true,
-      true
-    ],
-    [
-      false,
-      true,
-      false,
-      true,
-      true,
       true,
       true
     ],
@@ -60,19 +55,23 @@
       true,
       false,
       true,
-      false,
       true,
-      false
+      true,
+      true,
+      null,
+      null,
+      true
     ],
     [
       false,
       true,
       false,
+      true,
       false,
       true,
       false,
-      false,
-      false,
+      null,
+      null,
       true
     ],
     [
@@ -83,6 +82,31 @@
       true,
       false,
       false,
+      false,
+      true,
+      true
+    ],
+    [
+      false,
+      true,
+      false,
+      false,
+      true,
+      false,
+      false,
+      true,
+      false,
+      true
+    ],
+    [
+      false,
+      false,
+      false,
+      true,
+      true,
+      true,
+      true,
+      true,
       true,
       false
     ]
@@ -101,7 +125,8 @@
     "ground_static",
     "ground_dynamic",
     "hanging_static",
-    "hanging_dynamic"
+    "hanging_dynamic",
+    "bullet_projectile"
   ],
   "simulator-orientation": false,
   "simulator-resolution": {

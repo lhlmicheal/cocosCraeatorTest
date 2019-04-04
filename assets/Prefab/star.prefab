@@ -55,14 +55,14 @@
     },
     "_position": {
       "__type__": "cc.Vec3",
-      "x": 469,
-      "y": 278,
+      "x": 333.7,
+      "y": 176.4,
       "z": 0
     },
     "_scale": {
       "__type__": "cc.Vec3",
-      "x": 1,
-      "y": 1,
+      "x": 0.8,
+      "y": 0.8,
       "z": 1
     },
     "_rotationX": 0,
@@ -122,6 +122,12 @@
     "score_audio": {
       "__uuid__": "2ce28683-a826-46cc-9b86-bc254b5fbaa0"
     },
+    "scoreEffect": [
+      {
+        "__uuid__": "6e7d23fc-088d-495d-ad9f-66551cce2a91"
+      }
+    ],
+    "collisioned": false,
     "_id": ""
   },
   {
@@ -132,15 +138,15 @@
       "__id__": 1
     },
     "_enabled": true,
-    "_type": 2,
-    "_allowSleep": true,
-    "_gravityScale": 1,
+    "_type": 0,
+    "_allowSleep": false,
+    "_gravityScale": 0,
     "_linearDamping": 0,
     "_angularDamping": 0,
     "_linearVelocity": {
       "__type__": "cc.Vec2",
       "x": 0,
-      "y": 0
+      "y": 20
     },
     "_angularVelocity": 0,
     "_fixedRotation": true,
@@ -158,7 +164,7 @@
     "_enabled": true,
     "tag": 0,
     "_density": 1,
-    "_sensor": true,
+    "_sensor": false,
     "_friction": 0.2,
     "_restitution": 0,
     "body": null,

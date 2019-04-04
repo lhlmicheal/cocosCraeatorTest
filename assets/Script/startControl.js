@@ -8,7 +8,9 @@ cc.Class({
         score_audio: {
             default: null,
             type: cc.AudioClip
-        }
+        },
+        scoreEffect: [cc.Prefab],
+        collisioned: false
     },
 
     start: function () {
@@ -46,8 +48,17 @@ cc.Class({
         console.log("__star_contack_begin");
         if (otherCollider && otherCollider.node.name == 'role') {
             console.log('_star_get start');
+            if (this.collisioned) return;
+            this.collisioned = true;
             cc.audioEngine.play(this.score_audio, false, 2);
             customEvents.trigger(game.EVTS.STAR_COLLECT, [this.score_value]);
+            var effect = cc.instantiate(this.scoreEffect[0]);
+            var data = {
+                score: this.score_value,
+                startPos: this.node.getPosition()
+            };
+            effect.getComponent('coinGet').setData(data);
+            this.node.getParent().addChild(effect);
             this.node.removeFromParent();
         }
     },

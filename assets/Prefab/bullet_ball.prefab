@@ -12,12 +12,12 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "wooden_pile_thron_1",
+    "_name": "bullet_ball",
     "_objFlags": 0,
     "_parent": null,
     "_children": [],
     "_active": true,
-    "_level": 0,
+    "_level": 2,
     "_components": [
       {
         "__id__": 2
@@ -27,10 +27,16 @@
       },
       {
         "__id__": 4
+      },
+      {
+        "__id__": 5
+      },
+      {
+        "__id__": 6
       }
     ],
     "_prefab": {
-      "__id__": 5
+      "__id__": 7
     },
     "_opacity": 255,
     "_color": {
@@ -42,8 +48,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 17,
-      "height": 131
+      "width": 30,
+      "height": 30
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -52,8 +58,8 @@
     },
     "_position": {
       "__type__": "cc.Vec3",
-      "x": 684,
-      "y": 204,
+      "x": 141,
+      "y": 318,
       "z": 0
     },
     "_scale": {
@@ -74,7 +80,7 @@
     "_skewX": 0,
     "_skewY": 0,
     "_zIndex": 0,
-    "groupIndex": 7,
+    "groupIndex": 9,
     "_id": ""
   },
   {
@@ -88,10 +94,10 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "f8c99676-873e-44f4-bc11-1cf488221277"
+      "__uuid__": "e31d4381-b2fa-4e89-b90e-f4aa8b53e0e3"
     },
     "_type": 0,
-    "_sizeMode": 1,
+    "_sizeMode": 0,
     "_fillType": 0,
     "_fillCenter": {
       "__type__": "cc.Vec2",
@@ -103,8 +109,25 @@
     "_isTrimmedMode": true,
     "_state": 0,
     "_atlas": {
-      "__uuid__": "cc8efe09-6aec-48cd-8576-9b69d7be6d1e"
+      "__uuid__": "7f2acaa3-d8b1-4574-866d-0b0e18b13311"
     },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.Animation",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 1
+    },
+    "_enabled": true,
+    "_defaultClip": null,
+    "_clips": [
+      {
+        "__uuid__": "7a756878-ad38-4afb-98e3-e275e956555c"
+      }
+    ],
+    "playOnLoad": false,
     "_id": ""
   },
   {
@@ -115,7 +138,7 @@
       "__id__": 1
     },
     "_enabled": true,
-    "_type": 0,
+    "_type": 2,
     "_allowSleep": true,
     "_gravityScale": 1,
     "_linearDamping": 0,
@@ -128,11 +151,11 @@
     "_angularVelocity": 0,
     "_fixedRotation": false,
     "enabledContactListener": true,
-    "bullet": false,
+    "bullet": true,
     "_id": ""
   },
   {
-    "__type__": "cc.PhysicsBoxCollider",
+    "__type__": "cc.PhysicsCircleCollider",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -140,20 +163,36 @@
     },
     "_enabled": true,
     "tag": 0,
-    "_density": 1,
+    "_density": 0.4,
     "_sensor": false,
     "_friction": 0,
-    "_restitution": 0,
+    "_restitution": 1,
     "body": null,
     "_offset": {
       "__type__": "cc.Vec2",
       "x": 0,
       "y": 0
     },
-    "_size": {
-      "__type__": "cc.Size",
-      "width": 17,
-      "height": 131
+    "_radius": 9,
+    "_id": ""
+  },
+  {
+    "__type__": "4ce54ZA+fRPOYdt6q3i6+N8",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 1
+    },
+    "_enabled": true,
+    "moveSpeed": 0,
+    "curDrection": 1,
+    "impulseHorizonStartV": 35,
+    "impulseRestitutionV": 250,
+    "power": 25,
+    "firePos": {
+      "__type__": "cc.Vec2",
+      "x": 0,
+      "y": 0
     },
     "_id": ""
   },
@@ -163,9 +202,9 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "937f7b3f-fe9a-4b83-be8e-601111ad03b2"
+      "__uuid__": "5fa3da67-a9e3-41e3-aa71-7ce135b1d0ca"
     },
-    "fileId": "366t748m1GTJOTYanBEZOR",
+    "fileId": "2e1gylrdFCG4jloIrGUOu2",
     "sync": false
   }
 ]
