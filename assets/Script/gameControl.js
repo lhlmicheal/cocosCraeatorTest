@@ -25,9 +25,15 @@ cc.Class({
         cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this.oneKeyDown, this);
         cc.systemEvent.on(cc.SystemEvent.EventType.KEY_UP, this.oneKeyUp, this);
 
+        customEvents.listen(game.EVTS.PLAYER_DIE, this.gameSceneChange, this);
         customEvents.listen(game.EVTS.STAR_COLLECT, this.onStarCollect, this);
+        customEvents.listen(game.EVTS.KILL_ENEMY, this.onStarCollect, this);
         cc.director.getPhysicsManager().enabled = true;
         // cc.director.getPhysicsManager().debugDrawFlags = cc.PhysicsManager.DrawBits.e_shapeBit;
+        var manager = cc.director.getCollisionManager();
+        manager.enabled = true;
+        manager.enabledDebugDraw = true;
+        manager.enabledDrawBoundingBox = true;
     },
 
     onDestroy: function () {
@@ -35,16 +41,13 @@ cc.Class({
         cc.systemEvent.off(cc.SystemEvent.EventType.KEY_UP, this.oneKeyUp, this);
 
         console.log("__gameControl_onDestroy");
+        customEvents.ignore(game.EVTS.PLAYER_DIE, this.gameSceneChange, this);
         customEvents.ignore(game.EVTS.STAR_COLLECT, this.onStarCollect, this);
+        customEvents.ignore(game.EVTS.KILL_ENEMY, this.onStarCollect, this);
     },
 
     start: function () {
         console.log("__gameConstrol_enableCollision_physics");
-        var manager = cc.director.getCollisionManager();
-        manager.enabled = true;
-        manager.enabledDebugDraw = true;
-        manager.enabledDrawBoundingBox = true;
-
     },
 
     update: function (dt) {
@@ -88,7 +91,11 @@ cc.Class({
         modelControl.setGameScore(modelControl.getGameScore() + score);
         // cc.find("score", this.node).setString(modelControl.getGameScore() - '');
         this.score.string = (modelControl.getGameScore());
-        this.randomGenerateStar();
+        // this.randomGenerateStar();
+    },
+
+    gameSceneChange: function (to) {
+
     },
 
     randomGenerateStar: function () {

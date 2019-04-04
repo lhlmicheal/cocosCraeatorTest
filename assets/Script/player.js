@@ -1,12 +1,14 @@
 var game = require("macroDefine");
+var customEvents = require('eventCustom');
 
 cc.Class({
     extends: cc.Component,
 
     properties: {
         curDirection: 1, //1正向方向, -1反方向
-        upPressed: false, //是否按下跳跃键
+        collisioned: false,
 
+        upPressed: false, //是否按下跳跃键
         jumpHeight: 0,
         jumpDuration: 0,
         jumpCounts: 0,
@@ -18,6 +20,10 @@ cc.Class({
         moveSpeed: 0,
         accel_backword: false,
         accel_forword: false,
+
+        curWeaponId: -1,
+        weapons: [cc.Prefab],
+        fireReady: false,
     },
     //调整方向
     resetDirection: function (dire) {
@@ -59,7 +65,6 @@ cc.Class({
     jump: function () {
         var velocity = this.rigidbody.linearVelocity;
         var impuleFactor = this.getContinuousJumpFactor();
-        console.log("xxx_jumpAction_vY=" + velocity.y + "_impuleFactor=" + impuleFactor);
         var impulse = cc.v2(0, 3600 * impuleFactor);
         cc.audioEngine.play(this.jumpAudio, false, 2);
         this.rigidbody.applyLinearImpulse(impulse, this.rigidbody.getWorldCenter());
@@ -138,6 +143,12 @@ cc.Class({
 
         this.jumpLeftCount = this.jumpCounts;
         console.log("_player_onLoad: jumpleftCount=" + this.jumpLeftCount);
+
+        //游戏事件
+        customEvents.listen(game.EVTS.PICK_UP_WEAPON, this.equipWeapon, this);
+        //鼠标节点事件
+        this.node.on(cc.Node.EventType.MOUSE_DOWN, this.onMouseDown.bind(this));
+        this.node.on(cc.Node.EventType.MOUSE_UP, this.onMouseUp.bind(this));
     },
 
     update: function (dt) {
@@ -160,12 +171,11 @@ cc.Class({
     //只在两个碰撞体开始接触时被调用一次
     onBeginContact: function (contact, selfCollider, otherCollider) {
         console.log("__role_contact_begin");
-        // if (otherCollider && otherCollider.node.name == 'role') {
-        //     console.log('_role_get start');
-        //     cc.audioEngine.play(this.score_audio, false, 2);
-        //     customEvents.trigger(game.EVTS.STAR_COLLECT, [this.score_value]);
-        //     this.node.removeFromParent();
-        // }
+        if (otherCollider.node.name.indexOf('enemy') > 0) {
+            //死亡
+            customEvents.trigger(game.EVTS.PLAYER_DIE);
+            this.node.removeFromParent();
+        }
     },
     //每次将要处理碰撞体接触逻辑时被调用
     onPreSolve: function (contact, selfCollider, otherCollider) {
@@ -188,5 +198,35 @@ cc.Class({
     //只在两个碰撞体结束接触时被调用一次
     onEndContact: function (contact, selfCollider, otherCollider) {
 
-    }
+    },
+    //武器相关
+    equipWeapon: function (weaponId) {
+        this.curWeaponId = weaponId;
+        console.log("_play_equip_weaponId=" + this.weaponId);
+    },
+
+    fire: function () {
+        //取出当前weaponId对应的子弹perfab,创建
+        if (!this.weapons[this.curWeaponId]) {
+            console.log("_play_weaponId[" + this.curWeaponId + '] prefab is null');
+            return;
+        }
+        var bullet = cc.instantiate(this.weapons[this.curWeaponId]);
+        var data = {
+            direction: this.curDirection,
+            power: 20,
+            startPos: this.node.getPosition()
+        };
+        bullet.getComponent('bullet_ball').setData(data);
+        this.node.getParent().addChild(bullet);
+        // bullet.getComponent('bullet_ball').start();
+    },
+
+    onMouseDown: function (event) {
+        this.fireReady = true;
+    },
+    onMouseUp: function (event) {
+        if (this.weaponId < 0 || !this.fireReady) return;
+        this.fire();
+    },
 });
