@@ -12,7 +12,7 @@ Hello world new project template.
    2. 矩形测试:指定一个世界坐标系系的矩形，如果一个碰撞体的包围盒与这个矩形有重叠部分，则返回碰撞体列表。
    3. 射线测试:检测给定的险段穿过了那些碰撞体。其检测类型包括四种=》射线路径的任意碰撞，距离最近，所有碰撞，所有碰撞排序。
         对应检测结果:collider, point,normal,fraction
-
+//dee
 ## 刚体
 
 组成世界的基本对象。box2d中有三种类型:static, dynamic, kinematic.在CocosCreator中多添加了一个类型Animated
